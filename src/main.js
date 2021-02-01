@@ -8,6 +8,10 @@ import router from './router'
 import store from './store'
 
 import './permission'
+import vPermission from "./directives/permission";
+
+// 注册指令
+Vue.directive("permission", vPermission);
 
 import '@/icons'
 

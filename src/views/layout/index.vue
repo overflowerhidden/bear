@@ -9,6 +9,8 @@
         <span>Little Bear</span>
       </div>
       <div class="info">
+        <div v-permission="['admin']">管理员</div>
+        <div v-permission="['editor']">普通用户</div>
         <div class="user">{{$store.state.user.token}}</div>
         <div
           class="out"
@@ -49,7 +51,7 @@ export default {
           });
         })
         .catch((error) => {
-          alert(error);
+          console.log(error);
         });
     },
   },
@@ -93,7 +95,7 @@ export default {
       align-items: center;
       justify-content: flex-end;
       div {
-        width: 60px;
+        width: 80px;
         height: 30px;
         line-height: 30px;
         text-align: left;

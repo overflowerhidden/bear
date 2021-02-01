@@ -33,6 +33,5 @@ export default {
       return create(Notice, options)
     }
 
-    //$alert
   }
 }

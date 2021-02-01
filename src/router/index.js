@@ -44,11 +44,30 @@ export const constRoutes = [
             component: () => import('@/views/about/index'),
             meta: { title: 'About', icon: 'dashboard' }
         }]
-    },
+    }
 ];
 
 // 权限页面：受保护页面，要求用户登录并拥有访问权限的角色才能访问
-export const asyncRoutes = [];
+export const asyncRoutes = [
+    {
+        path: '/city',
+        name: '城市',
+        component: Layout,
+        redirect: '/city/info',
+        meta: { title: '城市', icon: 'table', roles: ['admin', 'editor'] },
+        children: [{
+            path: 'info',
+            name: '城市信息',
+            component: () => import('@/views/city/index'),
+            meta: { title: '城市信息', icon: 'dashboard', roles: ['admin', 'editor'] }
+        }, {
+            path: 'traffic',
+            name: '城市交通',
+            component: () => import('@/views/traffic/index'),
+            meta: { title: '城市交通', icon: 'dashboard', roles: ['admin'] }
+        }]
+    },
+];
 
 export default new Router({
     mode: "history",
