@@ -98,7 +98,7 @@ export default {
         width: 80px;
         height: 30px;
         line-height: 30px;
-        text-align: left;
+        text-align: center;
         cursor: pointer;
       }
     }
